@@ -264,6 +264,7 @@ public class TestActivity extends AppCompatActivity implements Initial {
         });
     }
 
+    
     @Override
     public void initView() {
 
