@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.yangyong.windleaf.wifi_bt"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/BenchmarkList'
+        exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/CompilerHints'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //support
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+    compile project(':kity')
+    //volley
+    compile 'com.android.volley:volley:1.0.0'
+    //eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //JSON
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.alibaba:fastjson:1.2.17'
+    //https://github.com/YoKeyword/Fragmentation
+    compile 'me.yokeyword:fragmentation:0.7.10'
+
+    //RxNetty
+    compile 'io.reactivex:rxnetty-tcp:0.5.2-rc.4'
+}
+
+
